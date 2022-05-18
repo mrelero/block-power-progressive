@@ -3851,20 +3851,19 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
 # 62 "main.c" 2
-# 71 "main.c"
+# 72 "main.c"
 enum state_bloq{
-    DESBLOQUEADO = 0,
-    BLOQUEIO_ANDAMENTO = 1,
-    BLOQUEADO = 2,
+    INITIALIZER = 0,
+    DESBLOQUEADO = 1,
+    BLOQUEIO_ANDAMENTO = 2,
+    BLOQUEADO = 3,
 };
 
 uint8_t flag = 0;
 uint16_t convert_ad =0;
 uint16_t count_timer =0;
 uint16_t count_bloq_cycles = 1;
-uint8_t bloq_timer = 0;
-uint16_t timer_bloq = 0;
-enum state_bloq STATE = DESBLOQUEADO;
+enum state_bloq STATE = INITIALIZER;
 
 
 
@@ -3897,8 +3896,13 @@ void main(void) {
     INTCON2bits.TMR0IP =1;
     RCONbits.IPEN = 1;
     ADCON0bits.GO = 1;
+    _delay((unsigned long)((500)*(8000000UL/4000000.0)));
     while(1){
         switch(STATE){
+            case INITIALIZER:
+
+                break;
+
             case DESBLOQUEADO:
                 LATCbits.LATC7 =0;
                 break;
@@ -3949,14 +3953,16 @@ void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
          convert_ad = convert_ad + ADRESL;
 
          if(convert_ad > 0x0067){
-             if(STATE == DESBLOQUEADO){
+            if(STATE == DESBLOQUEADO){
                  STATE = BLOQUEIO_ANDAMENTO;
                  count_timer=0;
                  count_bloq_cycles = 1;
-             }
-         }else{
-             STATE = DESBLOQUEADO;
-         }
+            }else if (STATE == INITIALIZER){
+                STATE = BLOQUEADO;
+            }
+            }else{
+                STATE = DESBLOQUEADO;
+            }
 
           PIR1bits.ADIF = 0;
           ADCON0bits.GO = 1;

@@ -5,9 +5,10 @@
 [d frameptr 4065 ]
 "83 C:\Users\Matheus\Desktop\Eletronica\Projects\block-power-progressive\block-power-progressive.X\main.c
 [e E2062 state_bloq `uc
-DESBLOQUEADO 0
-BLOQUEIO_ANDAMENTO 1
-BLOQUEADO 2
+INITIALIZER 0
+DESBLOQUEADO 1
+BLOQUEIO_ANDAMENTO 2
+BLOQUEADO 3
 ]
 "4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -35,13 +36,13 @@ BLOQUEADO 2
 [v ___omul __omul `(uo  1 e 8 0 ]
 "87 C:\Users\Matheus\Desktop\Eletronica\Projects\block-power-progressive\block-power-progressive.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"134
+"139
 [v _my_isr my_isr `IIH(v  1 e 1 0 ]
 "52 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "442
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
-[s S362 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S369 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -51,7 +52,7 @@ BLOQUEADO 2
 `uc 1 LATC7 1 0 :1:7 
 ]
 "873
-[s S371 . 1 `uc 1 LC0 1 0 :1:0 
+[s S378 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -60,9 +61,9 @@ BLOQUEADO 2
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S380 . 1 `S362 1 . 1 0 `S371 1 . 1 0 ]
-[v _LATCbits LATCbits `VES380  1 e 1 @3979 ]
-[s S31 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S387 . 1 `S369 1 . 1 0 `S378 1 . 1 0 ]
+[v _LATCbits LATCbits `VES387  1 e 1 @3979 ]
+[s S32 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -72,7 +73,7 @@ BLOQUEADO 2
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "990
-[s S40 . 1 `uc 1 RA0 1 0 :1:0 
+[s S41 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -81,11 +82,11 @@ BLOQUEADO 2
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-[u S49 . 1 `S31 1 . 1 0 `S40 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES49  1 e 1 @3986 ]
+[u S50 . 1 `S32 1 . 1 0 `S41 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES50  1 e 1 @3986 ]
 "1402
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S131 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S132 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -94,13 +95,13 @@ BLOQUEADO 2
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1768
-[s S139 . 1 `uc 1 . 1 0 :4:0 
+[s S140 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S143 . 1 `S131 1 . 1 0 `S139 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES143  1 e 1 @3997 ]
-[s S402 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S144 . 1 `S132 1 . 1 0 `S140 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES144  1 e 1 @3997 ]
+[s S409 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -109,13 +110,13 @@ BLOQUEADO 2
 `uc 1 ADIF 1 0 :1:6 
 ]
 "1839
-[s S410 . 1 `uc 1 . 1 0 :4:0 
+[s S417 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S414 . 1 `S402 1 . 1 0 `S410 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES414  1 e 1 @3998 ]
-[s S159 . 1 `uc 1 TMR1IP 1 0 :1:0 
+[u S421 . 1 `S409 1 . 1 0 `S417 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES421  1 e 1 @3998 ]
+[s S160 . 1 `uc 1 TMR1IP 1 0 :1:0 
 `uc 1 TMR2IP 1 0 :1:1 
 `uc 1 CCP1IP 1 0 :1:2 
 `uc 1 SSPIP 1 0 :1:3 
@@ -124,70 +125,70 @@ BLOQUEADO 2
 `uc 1 ADIP 1 0 :1:6 
 ]
 "1910
-[s S167 . 1 `uc 1 . 1 0 :4:0 
+[s S168 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IP 1 0 :1:4 
 `uc 1 RC1IP 1 0 :1:5 
 ]
-[u S171 . 1 `S159 1 . 1 0 `S167 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES171  1 e 1 @3999 ]
+[u S172 . 1 `S160 1 . 1 0 `S168 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES172  1 e 1 @3999 ]
 "3227
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
 "3298
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "3383
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S294 . 1 `uc 1 . 1 0 :1:0 
+[s S295 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "3427
-[s S297 . 1 `uc 1 ADON 1 0 :1:0 
+[s S298 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S301 . 1 `uc 1 . 1 0 :1:0 
+[s S302 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S308 . 1 `uc 1 . 1 0 :1:0 
+[s S309 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S311 . 1 `uc 1 . 1 0 :1:0 
+[s S312 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S314 . 1 `uc 1 . 1 0 :1:0 
+[s S315 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S317 . 1 `uc 1 . 1 0 :1:0 
+[s S318 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S320 . 1 `uc 1 . 1 0 :1:0 
+[s S321 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S323 . 1 `S294 1 . 1 0 `S297 1 . 1 0 `S301 1 . 1 0 `S308 1 . 1 0 `S311 1 . 1 0 `S314 1 . 1 0 `S317 1 . 1 0 `S320 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES323  1 e 1 @4034 ]
+[u S324 . 1 `S295 1 . 1 0 `S298 1 . 1 0 `S302 1 . 1 0 `S309 1 . 1 0 `S312 1 . 1 0 `S315 1 . 1 0 `S318 1 . 1 0 `S321 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES324  1 e 1 @4034 ]
 "3509
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "3516
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S229 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S230 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "4280
-[s S231 . 1 `uc 1 . 1 0 :1:0 
+[s S232 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S234 . 1 `uc 1 . 1 0 :2:0 
+[s S235 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S237 . 1 `uc 1 . 1 0 :3:0 
+[s S238 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S240 . 1 `uc 1 . 1 0 :4:0 
+[s S241 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S243 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S244 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -195,25 +196,25 @@ BLOQUEADO 2
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S251 . 1 `uc 1 BOR 1 0 :1:0 
+[s S252 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S257 . 1 `S229 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 `S237 1 . 1 0 `S240 1 . 1 0 `S243 1 . 1 0 `S251 1 . 1 0 ]
-[v _RCONbits RCONbits `VES257  1 e 1 @4048 ]
+[u S258 . 1 `S230 1 . 1 0 `S232 1 . 1 0 `S235 1 . 1 0 `S238 1 . 1 0 `S241 1 . 1 0 `S244 1 . 1 0 `S252 1 . 1 0 ]
+[v _RCONbits RCONbits `VES258  1 e 1 @4048 ]
 "4542
 [v _T0CON T0CON `VEuc  1 e 1 @4053 ]
 "4632
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "4639
 [v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
-[s S190 . 1 `uc 1 . 1 0 :7:0 
+[s S191 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "5023
-[s S193 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S194 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -222,14 +223,14 @@ BLOQUEADO 2
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S202 . 1 `uc 1 . 1 0 :2:0 
+[s S203 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IP 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S207 . 1 `S190 1 . 1 0 `S193 1 . 1 0 `S202 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES207  1 e 1 @4081 ]
-[s S71 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S208 . 1 `S191 1 . 1 0 `S194 1 . 1 0 `S203 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES208  1 e 1 @4081 ]
+[s S72 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -239,7 +240,7 @@ BLOQUEADO 2
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "5109
-[s S80 . 1 `uc 1 . 1 0 :1:0 
+[s S81 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -248,7 +249,7 @@ BLOQUEADO 2
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S89 . 1 `uc 1 . 1 0 :1:0 
+[s S90 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 INTE 1 0 :1:4 
@@ -256,25 +257,25 @@ BLOQUEADO 2
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S97 . 1 `S71 1 . 1 0 `S80 1 . 1 0 `S89 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES97  1 e 1 @4082 ]
-"78 C:\Users\Matheus\Desktop\Eletronica\Projects\block-power-progressive\block-power-progressive.X\main.c
+[u S98 . 1 `S72 1 . 1 0 `S81 1 . 1 0 `S90 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES98  1 e 1 @4082 ]
+"80 C:\Users\Matheus\Desktop\Eletronica\Projects\block-power-progressive\block-power-progressive.X\main.c
 [v _convert_ad convert_ad `us  1 e 2 0 ]
-"79
+"81
 [v _count_timer count_timer `us  1 e 2 0 ]
-"80
+"82
 [v _count_bloq_cycles count_bloq_cycles `us  1 e 2 0 ]
 "83
 [v _STATE STATE `E2062  1 e 1 0 ]
 "87
 [v _main main `(v  1 e 1 0 ]
 {
-"132
+"137
 } 0
-"134
+"139
 [v _my_isr my_isr `IIH(v  1 e 1 0 ]
 {
-"135
+"140
 [v my_isr@time_low time_low `us  1 a 2 0 ]
-"180
+"187
 } 0

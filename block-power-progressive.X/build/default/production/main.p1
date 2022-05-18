@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "83 main.c
-[; ;main.c: 83: enum state_bloq STATE = DESBLOQUEADO;
-[c E2062 0 1 2 .. ]
-[n E2062 state_bloq DESBLOQUEADO BLOQUEIO_ANDAMENTO BLOQUEADO  ]
+[; ;main.c: 83: enum state_bloq STATE = INITIALIZER;
+[c E2062 0 1 2 3 .. ]
+[n E2062 state_bloq INITIALIZER DESBLOQUEADO BLOQUEIO_ANDAMENTO BLOQUEADO  ]
 [p mainexit ]
 "52 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 52: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
@@ -188,7 +188,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3427
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 3427: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
 [v _ADCON0bits `VS133 ~T0 @X0 0 e@4034 ]
-"852
+[v F2054 `(v ~T0 @X0 1 tf1`ul ]
+"203 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
+[v __delay `JF2054 ~T0 @X0 0 e ]
+[p i __delay ]
+"852 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 852:     struct {
 [s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S34 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -657,44 +661,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5428
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 5428: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"77 main.c
-[; ;main.c: 77: uint8_t flag = 0;
+"79 main.c
+[; ;main.c: 79: uint8_t flag = 0;
 [v _flag `uc ~T0 @X0 1 e ]
 [i _flag
 -> -> 0 `i `uc
 ]
-"78
-[; ;main.c: 78: uint16_t convert_ad =0;
+"80
+[; ;main.c: 80: uint16_t convert_ad =0;
 [v _convert_ad `us ~T0 @X0 1 e ]
 [i _convert_ad
 -> -> 0 `i `us
 ]
-"79
-[; ;main.c: 79: uint16_t count_timer =0;
+"81
+[; ;main.c: 81: uint16_t count_timer =0;
 [v _count_timer `us ~T0 @X0 1 e ]
 [i _count_timer
 -> -> 0 `i `us
 ]
-"80
-[; ;main.c: 80: uint16_t count_bloq_cycles = 1;
+"82
+[; ;main.c: 82: uint16_t count_bloq_cycles = 1;
 [v _count_bloq_cycles `us ~T0 @X0 1 e ]
 [i _count_bloq_cycles
 -> -> 1 `i `us
 ]
-"81
-[; ;main.c: 81: uint8_t bloq_timer = 0;
-[v _bloq_timer `uc ~T0 @X0 1 e ]
-[i _bloq_timer
--> -> 0 `i `uc
-]
-"82
-[; ;main.c: 82: uint16_t timer_bloq = 0;
-[v _timer_bloq `us ~T0 @X0 1 e ]
-[i _timer_bloq
--> -> 0 `i `us
-]
 "83
-[; ;main.c: 83: enum state_bloq STATE = DESBLOQUEADO;
+[; ;main.c: 83: enum state_bloq STATE = INITIALIZER;
 [v _STATE `E2062 ~T0 @X0 1 e ]
 [i _STATE
 . `E2062 0
@@ -767,210 +759,231 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 115:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
 "116
-[; ;main.c: 116:     while(1){
+[; ;main.c: 116:     _delay((unsigned long)((500)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+"117
+[; ;main.c: 117:     while(1){
 [e :U 222 ]
 {
-"117
-[; ;main.c: 117:         switch(STATE){
+"118
+[; ;main.c: 118:         switch(STATE){
 [e $U 225  ]
 {
-"118
-[; ;main.c: 118:             case DESBLOQUEADO:
-[e :U 226 ]
 "119
-[; ;main.c: 119:                 LATCbits.LATC7 =0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:                 break;
-[e $U 224  ]
+[; ;main.c: 119:             case INITIALIZER:
+[e :U 226 ]
 "121
-[; ;main.c: 121:             case BLOQUEIO_ANDAMENTO:
-[e :U 227 ]
+[; ;main.c: 121:                 break;
+[e $U 224  ]
 "123
-[; ;main.c: 123:                 break;
-[e $U 224  ]
+[; ;main.c: 123:             case DESBLOQUEADO:
+[e :U 227 ]
 "124
-[; ;main.c: 124:             case BLOQUEADO:
-[e :U 228 ]
+[; ;main.c: 124:                 LATCbits.LATC7 =0;
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 "125
-[; ;main.c: 125:                 LATCbits.LATC7 =1;
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-"126
-[; ;main.c: 126:                 break;
+[; ;main.c: 125:                 break;
 [e $U 224  ]
-"127
-[; ;main.c: 127:         }
+"126
+[; ;main.c: 126:             case BLOQUEIO_ANDAMENTO:
+[e :U 228 ]
+"128
+[; ;main.c: 128:                 break;
+[e $U 224  ]
+"129
+[; ;main.c: 129:             case BLOQUEADO:
+[e :U 229 ]
+"130
+[; ;main.c: 130:                 LATCbits.LATC7 =1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+"131
+[; ;main.c: 131:                 break;
+[e $U 224  ]
+"132
+[; ;main.c: 132:         }
 }
 [e $U 224  ]
 [e :U 225 ]
 [e [\ -> _STATE `ui , $ -> . `E2062 0 `ui 226
  , $ -> . `E2062 1 `ui 227
  , $ -> . `E2062 2 `ui 228
+ , $ -> . `E2062 3 `ui 229
  224 ]
 [e :U 224 ]
-"129
-[; ;main.c: 129:     }
+"134
+[; ;main.c: 134:     }
 }
 [e :U 221 ]
 [e $U 222  ]
 [e :U 223 ]
-"131
-[; ;main.c: 131:     return;
+"136
+[; ;main.c: 136:     return;
 [e $UE 220  ]
-"132
-[; ;main.c: 132: }
+"137
+[; ;main.c: 137: }
 [e :UE 220 ]
 }
 [v $root$_my_isr `(v ~T0 @X0 0 e ]
-"134
-[; ;main.c: 134: void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
+"139
+[; ;main.c: 139: void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
 [v _my_isr `(v ~T33 @X0 1 ef ]
 {
 [e :U _my_isr ]
 [f ]
-"135
-[; ;main.c: 135:     uint16_t time_low =0;
+"140
+[; ;main.c: 140:     uint16_t time_low =0;
 [v _time_low `us ~T0 @X0 1 a ]
 [e = _time_low -> -> 0 `i `us ]
-"137
-[; ;main.c: 137:      if (INTCONbits.TMR0IF == 1){
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 230  ]
-{
-"139
-[; ;main.c: 139:          if(STATE == BLOQUEIO_ANDAMENTO)
-[e $ ! == -> _STATE `ui -> . `E2062 1 `ui 231  ]
-"140
-[; ;main.c: 140:         {
-{
-"141
-[; ;main.c: 141:             time_low = 400 - (count_bloq_cycles);
-[e = _time_low -> - -> -> 400 `i `ui -> _count_bloq_cycles `ui `us ]
 "142
-[; ;main.c: 142:             if(count_timer >= time_low){
-[e $ ! >= -> _count_timer `ui -> _time_low `ui 232  ]
-{
-"143
-[; ;main.c: 143:                 if(count_timer<400){
-[e $ ! < -> _count_timer `ui -> -> 400 `i `ui 233  ]
+[; ;main.c: 142:      if (INTCONbits.TMR0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 231  ]
 {
 "144
-[; ;main.c: 144:                     LATCbits.LATC7 = 1;
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 144:          if(STATE == BLOQUEIO_ANDAMENTO)
+[e $ ! == -> _STATE `ui -> . `E2062 2 `ui 232  ]
 "145
-[; ;main.c: 145:                 }else{
-}
-[e $U 234  ]
-[e :U 233 ]
+[; ;main.c: 145:         {
 {
 "146
-[; ;main.c: 146:                     LATCbits.LATC7 = 0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 146:             time_low = 400 - (count_bloq_cycles);
+[e = _time_low -> - -> -> 400 `i `ui -> _count_bloq_cycles `ui `us ]
 "147
-[; ;main.c: 147:                     count_timer = 0;
-[e = _count_timer -> -> 0 `i `us ]
-"148
-[; ;main.c: 148:                     count_bloq_cycles=count_bloq_cycles*2;
-[e = _count_bloq_cycles -> * -> _count_bloq_cycles `ui -> -> 2 `i `ui `us ]
-"149
-[; ;main.c: 149:                     if (count_bloq_cycles >=400){
-[e $ ! >= -> _count_bloq_cycles `ui -> -> 400 `i `ui 235  ]
+[; ;main.c: 147:             if(count_timer >= time_low){
+[e $ ! >= -> _count_timer `ui -> _time_low `ui 233  ]
 {
+"148
+[; ;main.c: 148:                 if(count_timer<400){
+[e $ ! < -> _count_timer `ui -> -> 400 `i `ui 234  ]
+{
+"149
+[; ;main.c: 149:                     LATCbits.LATC7 = 1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 "150
-[; ;main.c: 150:                         STATE = BLOQUEADO;
-[e = _STATE . `E2062 2 ]
+[; ;main.c: 150:                 }else{
+}
+[e $U 235  ]
+[e :U 234 ]
+{
 "151
-[; ;main.c: 151:                         count_bloq_cycles =1;
-[e = _count_bloq_cycles -> -> 1 `i `us ]
+[; ;main.c: 151:                     LATCbits.LATC7 = 0;
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
 "152
-[; ;main.c: 152:                         count_timer = 0;
+[; ;main.c: 152:                     count_timer = 0;
 [e = _count_timer -> -> 0 `i `us ]
 "153
-[; ;main.c: 153:                     }
-}
-[e :U 235 ]
+[; ;main.c: 153:                     count_bloq_cycles=count_bloq_cycles*2;
+[e = _count_bloq_cycles -> * -> _count_bloq_cycles `ui -> -> 2 `i `ui `us ]
 "154
-[; ;main.c: 154:                 }
-}
-[e :U 234 ]
+[; ;main.c: 154:                     if (count_bloq_cycles >=400){
+[e $ ! >= -> _count_bloq_cycles `ui -> -> 400 `i `ui 236  ]
+{
 "155
-[; ;main.c: 155:             }
-}
-[e :U 232 ]
+[; ;main.c: 155:                         STATE = BLOQUEADO;
+[e = _STATE . `E2062 3 ]
 "156
-[; ;main.c: 156:         }
-}
-[e :U 231 ]
-"157
-[; ;main.c: 157:         count_timer++;
-[e ++ _count_timer -> -> 1 `i `us ]
-"158
-[; ;main.c: 158:         TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
-"159
-[; ;main.c: 159:         TMR0L = 0xB1;
-[e = _TMR0L -> -> 177 `i `uc ]
-"160
-[; ;main.c: 160:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"161
-[; ;main.c: 161:     }
-}
-[e :U 230 ]
-"163
-[; ;main.c: 163:      if (PIR1bits.ADIF == 1){
-[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 236  ]
-{
-"164
-[; ;main.c: 164:          convert_ad = (uint16_t) ADRESH<<8;
-[e = _convert_ad -> << -> -> _ADRESH `us `ui -> 8 `i `us ]
-"165
-[; ;main.c: 165:          convert_ad = convert_ad + ADRESL;
-[e = _convert_ad -> + -> _convert_ad `ui -> _ADRESL `ui `us ]
-"167
-[; ;main.c: 167:          if(convert_ad > 0x0067){
-[e $ ! > -> _convert_ad `ui -> -> 103 `i `ui 237  ]
-{
-"168
-[; ;main.c: 168:              if(STATE == DESBLOQUEADO){
-[e $ ! == -> _STATE `ui -> . `E2062 0 `ui 238  ]
-{
-"169
-[; ;main.c: 169:                  STATE = BLOQUEIO_ANDAMENTO;
-[e = _STATE . `E2062 1 ]
-"170
-[; ;main.c: 170:                  count_timer=0;
-[e = _count_timer -> -> 0 `i `us ]
-"171
-[; ;main.c: 171:                  count_bloq_cycles = 1;
+[; ;main.c: 156:                         count_bloq_cycles =1;
 [e = _count_bloq_cycles -> -> 1 `i `us ]
-"172
-[; ;main.c: 172:              }
-}
-[e :U 238 ]
-"173
-[; ;main.c: 173:          }else{
-}
-[e $U 239  ]
-[e :U 237 ]
-{
-"174
-[; ;main.c: 174:              STATE = DESBLOQUEADO;
-[e = _STATE . `E2062 0 ]
-"175
-[; ;main.c: 175:          }
-}
-[e :U 239 ]
-"177
-[; ;main.c: 177:           PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"178
-[; ;main.c: 178:           ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"179
-[; ;main.c: 179:      }
+"157
+[; ;main.c: 157:                         count_timer = 0;
+[e = _count_timer -> -> 0 `i `us ]
+"158
+[; ;main.c: 158:                     }
 }
 [e :U 236 ]
+"159
+[; ;main.c: 159:                 }
+}
+[e :U 235 ]
+"160
+[; ;main.c: 160:             }
+}
+[e :U 233 ]
+"161
+[; ;main.c: 161:         }
+}
+[e :U 232 ]
+"162
+[; ;main.c: 162:         count_timer++;
+[e ++ _count_timer -> -> 1 `i `us ]
+"163
+[; ;main.c: 163:         TMR0H = 0xFF;
+[e = _TMR0H -> -> 255 `i `uc ]
+"164
+[; ;main.c: 164:         TMR0L = 0xB1;
+[e = _TMR0L -> -> 177 `i `uc ]
+"165
+[; ;main.c: 165:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"166
+[; ;main.c: 166:     }
+}
+[e :U 231 ]
+"168
+[; ;main.c: 168:      if (PIR1bits.ADIF == 1){
+[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 237  ]
+{
+"169
+[; ;main.c: 169:          convert_ad = (uint16_t) ADRESH<<8;
+[e = _convert_ad -> << -> -> _ADRESH `us `ui -> 8 `i `us ]
+"170
+[; ;main.c: 170:          convert_ad = convert_ad + ADRESL;
+[e = _convert_ad -> + -> _convert_ad `ui -> _ADRESL `ui `us ]
+"172
+[; ;main.c: 172:          if(convert_ad > 0x0067){
+[e $ ! > -> _convert_ad `ui -> -> 103 `i `ui 238  ]
+{
+"173
+[; ;main.c: 173:             if(STATE == DESBLOQUEADO){
+[e $ ! == -> _STATE `ui -> . `E2062 1 `ui 239  ]
+{
+"174
+[; ;main.c: 174:                  STATE = BLOQUEIO_ANDAMENTO;
+[e = _STATE . `E2062 2 ]
+"175
+[; ;main.c: 175:                  count_timer=0;
+[e = _count_timer -> -> 0 `i `us ]
+"176
+[; ;main.c: 176:                  count_bloq_cycles = 1;
+[e = _count_bloq_cycles -> -> 1 `i `us ]
+"177
+[; ;main.c: 177:             }else if (STATE == INITIALIZER){
+}
+[e $U 240  ]
+[e :U 239 ]
+[e $ ! == -> _STATE `ui -> . `E2062 0 `ui 241  ]
+{
+"178
+[; ;main.c: 178:                 STATE = BLOQUEADO;
+[e = _STATE . `E2062 3 ]
+"179
+[; ;main.c: 179:             }
+}
+[e :U 241 ]
+[e :U 240 ]
 "180
-[; ;main.c: 180: }
-[e :UE 229 ]
+[; ;main.c: 180:             }else{
+}
+[e $U 242  ]
+[e :U 238 ]
+{
+"181
+[; ;main.c: 181:                 STATE = DESBLOQUEADO;
+[e = _STATE . `E2062 1 ]
+"182
+[; ;main.c: 182:             }
+}
+[e :U 242 ]
+"184
+[; ;main.c: 184:           PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"185
+[; ;main.c: 185:           ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"186
+[; ;main.c: 186:      }
+}
+[e :U 237 ]
+"187
+[; ;main.c: 187: }
+[e :UE 230 ]
 }

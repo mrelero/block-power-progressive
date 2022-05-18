@@ -61,6 +61,7 @@
 #include <stdint.h>
 #include <xc.h>
 
+#define _XTAL_FREQ                      8000000UL
 
 #define HIGH 1
 #define LOW 0
@@ -69,18 +70,17 @@
 
 
 enum state_bloq{
-    DESBLOQUEADO = 0,
-    BLOQUEIO_ANDAMENTO = 1,
-    BLOQUEADO = 2,
+    INITIALIZER = 0,
+    DESBLOQUEADO = 1,
+    BLOQUEIO_ANDAMENTO = 2,
+    BLOQUEADO = 3,
 };
 
 uint8_t flag = 0; 
 uint16_t convert_ad =0;
 uint16_t count_timer =0;
 uint16_t count_bloq_cycles = 1;
-uint8_t bloq_timer = 0;
-uint16_t timer_bloq = 0;
-enum state_bloq STATE = DESBLOQUEADO;
+enum state_bloq STATE = INITIALIZER;
 
 
 
@@ -113,8 +113,13 @@ void main(void) {
     INTCON2bits.TMR0IP =1; 
     RCONbits.IPEN = 1; //Desabilita prioridades;
     ADCON0bits.GO = 1;
+    __delay_us(500);
     while(1){
         switch(STATE){
+            case INITIALIZER:
+
+                break;
+
             case DESBLOQUEADO:
                 LATCbits.LATC7 =0;
                 break;
@@ -165,14 +170,16 @@ void __interrupt(high_priority) my_isr(void){
          convert_ad = convert_ad + ADRESL;
          
          if(convert_ad > 0x0067){
-             if(STATE == DESBLOQUEADO){
+            if(STATE == DESBLOQUEADO){
                  STATE = BLOQUEIO_ANDAMENTO;
                  count_timer=0;
                  count_bloq_cycles = 1;
-             }
-         }else{
-             STATE = DESBLOQUEADO;
-         }
+            }else if (STATE == INITIALIZER){
+                STATE = BLOQUEADO;
+            }      
+            }else{
+                STATE = DESBLOQUEADO;
+            }
          
           PIR1bits.ADIF = 0;
           ADCON0bits.GO = 1;
