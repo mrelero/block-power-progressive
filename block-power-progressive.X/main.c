@@ -68,8 +68,20 @@
 #define OUTPUT 0
 
 
+enum state_bloq{
+    DESBLOQUEADO = 0,
+    BLOQUEIO_ANDAMENTO = 1,
+    BLOQUEADO = 2,
+};
+
 uint8_t flag = 0; 
 uint16_t convert_ad =0;
+uint16_t count_timer =0;
+uint16_t count_bloq_cycles = 1;
+uint8_t bloq_timer = 0;
+uint16_t timer_bloq = 0;
+enum state_bloq STATE = DESBLOQUEADO;
+
 
 
 void main(void) {
@@ -102,20 +114,47 @@ void main(void) {
     RCONbits.IPEN = 1; //Desabilita prioridades;
     ADCON0bits.GO = 1;
     while(1){
-       /* if (PORTAbits.RA0 == LOW){
-            LATCbits.LATC7 = HIGH;
-        }else{
-            LATCbits.LATC7 = LOW;
-        }*/
+        switch(STATE){
+            case DESBLOQUEADO:
+                LATCbits.LATC7 =0;
+                break;
+            case BLOQUEIO_ANDAMENTO:
+                
+                break;
+            case BLOQUEADO:
+                LATCbits.LATC7 =1;
+                break;
+        }
+
     }
     
     return;
 }
 
 void __interrupt(high_priority) my_isr(void){
-    
+    uint16_t time_low =0;
     
      if (INTCONbits.TMR0IF == 1){  
+
+         if(STATE == BLOQUEIO_ANDAMENTO)
+        {
+            time_low = 400 - (count_bloq_cycles);
+            if(count_timer >= time_low){
+                if(count_timer<400){
+                    LATCbits.LATC7 = 1;
+                }else{
+                    LATCbits.LATC7 = 0;
+                    count_timer = 0;
+                    count_bloq_cycles=count_bloq_cycles*2;
+                    if (count_bloq_cycles >=400){
+                        STATE = BLOQUEADO;
+                        count_bloq_cycles =1;
+                        count_timer = 0;
+                    }
+                }           
+            }
+        }
+        count_timer++; 
         TMR0H = 0xFF;
         TMR0L = 0xB1;
         INTCONbits.TMR0IF = 0; 
@@ -126,9 +165,13 @@ void __interrupt(high_priority) my_isr(void){
          convert_ad = convert_ad + ADRESL;
          
          if(convert_ad > 0x0067){
-             LATCbits.LATC7 =1;
+             if(STATE == DESBLOQUEADO){
+                 STATE = BLOQUEIO_ANDAMENTO;
+                 count_timer=0;
+                 count_bloq_cycles = 1;
+             }
          }else{
-             LATCbits.LATC7 =0;
+             STATE = DESBLOQUEADO;
          }
          
           PIR1bits.ADIF = 0;

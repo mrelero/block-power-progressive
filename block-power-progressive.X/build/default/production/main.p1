@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"83 main.c
+[; ;main.c: 83: enum state_bloq STATE = DESBLOQUEADO;
+[c E2062 0 1 2 .. ]
+[n E2062 state_bloq DESBLOQUEADO BLOQUEIO_ANDAMENTO BLOQUEADO  ]
 [p mainexit ]
 "52 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 52: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
@@ -184,6 +188,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3427
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 3427: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
 [v _ADCON0bits `VS133 ~T0 @X0 0 e@4034 ]
+"852
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 852:     struct {
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"862
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 862:     struct {
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"851
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 851: typedef union {
+[u S33 `S34 1 `S35 1 ]
+[n S33 . . . ]
+"873
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 873: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
+[v _LATCbits `VS33 ~T0 @X0 0 e@3979 ]
 [t ~ __interrupt . k ]
 [t T33 __interrupt high_priority ]
 "1824
@@ -207,21 +226,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3509
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 3509: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"852
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 852:     struct {
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"862
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 862:     struct {
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
-"851
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 851: typedef union {
-[u S33 `S34 1 `S35 1 ]
-[n S33 . . . ]
-"873
-[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 873: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
-[v _LATCbits `VS33 ~T0 @X0 0 e@3979 ]
 "7 main.c
 [p x OSC  =  HS      ]
 "8
@@ -653,167 +657,320 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5428
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f2320.h: 5428: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"71 main.c
-[; ;main.c: 71: uint8_t flag = 0;
+"77 main.c
+[; ;main.c: 77: uint8_t flag = 0;
 [v _flag `uc ~T0 @X0 1 e ]
 [i _flag
 -> -> 0 `i `uc
 ]
-"72
-[; ;main.c: 72: uint16_t convert_ad =0;
+"78
+[; ;main.c: 78: uint16_t convert_ad =0;
 [v _convert_ad `us ~T0 @X0 1 e ]
 [i _convert_ad
 -> -> 0 `i `us
 ]
+"79
+[; ;main.c: 79: uint16_t count_timer =0;
+[v _count_timer `us ~T0 @X0 1 e ]
+[i _count_timer
+-> -> 0 `i `us
+]
+"80
+[; ;main.c: 80: uint16_t count_bloq_cycles = 1;
+[v _count_bloq_cycles `us ~T0 @X0 1 e ]
+[i _count_bloq_cycles
+-> -> 1 `i `us
+]
+"81
+[; ;main.c: 81: uint8_t bloq_timer = 0;
+[v _bloq_timer `uc ~T0 @X0 1 e ]
+[i _bloq_timer
+-> -> 0 `i `uc
+]
+"82
+[; ;main.c: 82: uint16_t timer_bloq = 0;
+[v _timer_bloq `us ~T0 @X0 1 e ]
+[i _timer_bloq
+-> -> 0 `i `us
+]
+"83
+[; ;main.c: 83: enum state_bloq STATE = DESBLOQUEADO;
+[v _STATE `E2062 ~T0 @X0 1 e ]
+[i _STATE
+. `E2062 0
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"75
-[; ;main.c: 75: void main(void) {
+"87
+[; ;main.c: 87: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"77
-[; ;main.c: 77:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"79
-[; ;main.c: 79:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80:     TRISAbits.RA0 = 1;
-[e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
-"83
-[; ;main.c: 83:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"84
-[; ;main.c: 84:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"85
-[; ;main.c: 85:     ADCON0 = 0b00000001;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"86
-[; ;main.c: 86:     ADCON1 = 0b00001110;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"87
-[; ;main.c: 87:     ADCON2 = 0b10001101;
-[e = _ADCON2 -> -> 141 `i `uc ]
-"88
-[; ;main.c: 88:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "89
-[; ;main.c: 89:     IPR1bits.ADIP = 1;
-[e = . . _IPR1bits 0 6 -> -> 1 `i `uc ]
-"93
-[; ;main.c: 93:     T0CON = 0b10010111;
-[e = _T0CON -> -> 151 `i `uc ]
+[; ;main.c: 89:     PORTA = 0x00;
+[e = _PORTA -> -> 0 `i `uc ]
+"90
+[; ;main.c: 90:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"91
+[; ;main.c: 91:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
+"92
+[; ;main.c: 92:     TRISAbits.RA0 = 1;
+[e = . . _TRISAbits 1 0 -> -> 1 `i `uc ]
+"95
+[; ;main.c: 95:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
 "96
-[; ;main.c: 96:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 96:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "97
-[; ;main.c: 97:     INTCONbits.TMR0IF = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 97:     ADCON0 = 0b00000001;
+[e = _ADCON0 -> -> 1 `i `uc ]
 "98
-[; ;main.c: 98:     PIE1bits.RCIE = 0;
-[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 98:     ADCON1 = 0b00001110;
+[e = _ADCON1 -> -> 14 `i `uc ]
 "99
-[; ;main.c: 99:     TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
+[; ;main.c: 99:     ADCON2 = 0b10001101;
+[e = _ADCON2 -> -> 141 `i `uc ]
 "100
-[; ;main.c: 100:     TMR0L = 0xB1;
-[e = _TMR0L -> -> 177 `i `uc ]
+[; ;main.c: 100:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "101
-[; ;main.c: 101:     INTCON2bits.TMR0IP =1;
+[; ;main.c: 101:     IPR1bits.ADIP = 1;
+[e = . . _IPR1bits 0 6 -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105:     T0CON = 0b10010111;
+[e = _T0CON -> -> 151 `i `uc ]
+"108
+[; ;main.c: 108:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"109
+[; ;main.c: 109:     INTCONbits.TMR0IF = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"110
+[; ;main.c: 110:     PIE1bits.RCIE = 0;
+[e = . . _PIE1bits 0 5 -> -> 0 `i `uc ]
+"111
+[; ;main.c: 111:     TMR0H = 0xFF;
+[e = _TMR0H -> -> 255 `i `uc ]
+"112
+[; ;main.c: 112:     TMR0L = 0xB1;
+[e = _TMR0L -> -> 177 `i `uc ]
+"113
+[; ;main.c: 113:     INTCON2bits.TMR0IP =1;
 [e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-"102
-[; ;main.c: 102:     RCONbits.IPEN = 1;
+"114
+[; ;main.c: 114:     RCONbits.IPEN = 1;
 [e = . . _RCONbits 5 6 -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:     ADCON0bits.GO = 1;
+"115
+[; ;main.c: 115:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"104
-[; ;main.c: 104:     while(1){
+"116
+[; ;main.c: 116:     while(1){
 [e :U 222 ]
 {
-"110
-[; ;main.c: 110:     }
+"117
+[; ;main.c: 117:         switch(STATE){
+[e $U 225  ]
+{
+"118
+[; ;main.c: 118:             case DESBLOQUEADO:
+[e :U 226 ]
+"119
+[; ;main.c: 119:                 LATCbits.LATC7 =0;
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+"120
+[; ;main.c: 120:                 break;
+[e $U 224  ]
+"121
+[; ;main.c: 121:             case BLOQUEIO_ANDAMENTO:
+[e :U 227 ]
+"123
+[; ;main.c: 123:                 break;
+[e $U 224  ]
+"124
+[; ;main.c: 124:             case BLOQUEADO:
+[e :U 228 ]
+"125
+[; ;main.c: 125:                 LATCbits.LATC7 =1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+"126
+[; ;main.c: 126:                 break;
+[e $U 224  ]
+"127
+[; ;main.c: 127:         }
+}
+[e $U 224  ]
+[e :U 225 ]
+[e [\ -> _STATE `ui , $ -> . `E2062 0 `ui 226
+ , $ -> . `E2062 1 `ui 227
+ , $ -> . `E2062 2 `ui 228
+ 224 ]
+[e :U 224 ]
+"129
+[; ;main.c: 129:     }
 }
 [e :U 221 ]
 [e $U 222  ]
 [e :U 223 ]
-"112
-[; ;main.c: 112:     return;
+"131
+[; ;main.c: 131:     return;
 [e $UE 220  ]
-"113
-[; ;main.c: 113: }
+"132
+[; ;main.c: 132: }
 [e :UE 220 ]
 }
 [v $root$_my_isr `(v ~T0 @X0 0 e ]
-"115
-[; ;main.c: 115: void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
+"134
+[; ;main.c: 134: void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
 [v _my_isr `(v ~T33 @X0 1 ef ]
 {
 [e :U _my_isr ]
 [f ]
-"118
-[; ;main.c: 118:      if (INTCONbits.TMR0IF == 1){
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 225  ]
-{
-"119
-[; ;main.c: 119:         TMR0H = 0xFF;
-[e = _TMR0H -> -> 255 `i `uc ]
-"120
-[; ;main.c: 120:         TMR0L = 0xB1;
-[e = _TMR0L -> -> 177 `i `uc ]
-"121
-[; ;main.c: 121:         INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"122
-[; ;main.c: 122:     }
-}
-[e :U 225 ]
-"124
-[; ;main.c: 124:      if (PIR1bits.ADIF == 1){
-[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 226  ]
-{
-"125
-[; ;main.c: 125:          convert_ad = (uint16_t) ADRESH<<8;
-[e = _convert_ad -> << -> -> _ADRESH `us `ui -> 8 `i `us ]
-"126
-[; ;main.c: 126:          convert_ad = convert_ad + ADRESL;
-[e = _convert_ad -> + -> _convert_ad `ui -> _ADRESL `ui `us ]
-"128
-[; ;main.c: 128:          if(convert_ad > 0x0067){
-[e $ ! > -> _convert_ad `ui -> -> 103 `i `ui 227  ]
-{
-"129
-[; ;main.c: 129:              LATCbits.LATC7 =1;
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-"130
-[; ;main.c: 130:          }else{
-}
-[e $U 228  ]
-[e :U 227 ]
-{
-"131
-[; ;main.c: 131:              LATCbits.LATC7 =0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:          }
-}
-[e :U 228 ]
-"134
-[; ;main.c: 134:           PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "135
-[; ;main.c: 135:           ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-"136
-[; ;main.c: 136:      }
-}
-[e :U 226 ]
+[; ;main.c: 135:     uint16_t time_low =0;
+[v _time_low `us ~T0 @X0 1 a ]
+[e = _time_low -> -> 0 `i `us ]
 "137
-[; ;main.c: 137: }
-[e :UE 224 ]
+[; ;main.c: 137:      if (INTCONbits.TMR0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 230  ]
+{
+"139
+[; ;main.c: 139:          if(STATE == BLOQUEIO_ANDAMENTO)
+[e $ ! == -> _STATE `ui -> . `E2062 1 `ui 231  ]
+"140
+[; ;main.c: 140:         {
+{
+"141
+[; ;main.c: 141:             time_low = 400 - (count_bloq_cycles);
+[e = _time_low -> - -> -> 400 `i `ui -> _count_bloq_cycles `ui `us ]
+"142
+[; ;main.c: 142:             if(count_timer >= time_low){
+[e $ ! >= -> _count_timer `ui -> _time_low `ui 232  ]
+{
+"143
+[; ;main.c: 143:                 if(count_timer<400){
+[e $ ! < -> _count_timer `ui -> -> 400 `i `ui 233  ]
+{
+"144
+[; ;main.c: 144:                     LATCbits.LATC7 = 1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+"145
+[; ;main.c: 145:                 }else{
+}
+[e $U 234  ]
+[e :U 233 ]
+{
+"146
+[; ;main.c: 146:                     LATCbits.LATC7 = 0;
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+"147
+[; ;main.c: 147:                     count_timer = 0;
+[e = _count_timer -> -> 0 `i `us ]
+"148
+[; ;main.c: 148:                     count_bloq_cycles=count_bloq_cycles*2;
+[e = _count_bloq_cycles -> * -> _count_bloq_cycles `ui -> -> 2 `i `ui `us ]
+"149
+[; ;main.c: 149:                     if (count_bloq_cycles >=400){
+[e $ ! >= -> _count_bloq_cycles `ui -> -> 400 `i `ui 235  ]
+{
+"150
+[; ;main.c: 150:                         STATE = BLOQUEADO;
+[e = _STATE . `E2062 2 ]
+"151
+[; ;main.c: 151:                         count_bloq_cycles =1;
+[e = _count_bloq_cycles -> -> 1 `i `us ]
+"152
+[; ;main.c: 152:                         count_timer = 0;
+[e = _count_timer -> -> 0 `i `us ]
+"153
+[; ;main.c: 153:                     }
+}
+[e :U 235 ]
+"154
+[; ;main.c: 154:                 }
+}
+[e :U 234 ]
+"155
+[; ;main.c: 155:             }
+}
+[e :U 232 ]
+"156
+[; ;main.c: 156:         }
+}
+[e :U 231 ]
+"157
+[; ;main.c: 157:         count_timer++;
+[e ++ _count_timer -> -> 1 `i `us ]
+"158
+[; ;main.c: 158:         TMR0H = 0xFF;
+[e = _TMR0H -> -> 255 `i `uc ]
+"159
+[; ;main.c: 159:         TMR0L = 0xB1;
+[e = _TMR0L -> -> 177 `i `uc ]
+"160
+[; ;main.c: 160:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"161
+[; ;main.c: 161:     }
+}
+[e :U 230 ]
+"163
+[; ;main.c: 163:      if (PIR1bits.ADIF == 1){
+[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 236  ]
+{
+"164
+[; ;main.c: 164:          convert_ad = (uint16_t) ADRESH<<8;
+[e = _convert_ad -> << -> -> _ADRESH `us `ui -> 8 `i `us ]
+"165
+[; ;main.c: 165:          convert_ad = convert_ad + ADRESL;
+[e = _convert_ad -> + -> _convert_ad `ui -> _ADRESL `ui `us ]
+"167
+[; ;main.c: 167:          if(convert_ad > 0x0067){
+[e $ ! > -> _convert_ad `ui -> -> 103 `i `ui 237  ]
+{
+"168
+[; ;main.c: 168:              if(STATE == DESBLOQUEADO){
+[e $ ! == -> _STATE `ui -> . `E2062 0 `ui 238  ]
+{
+"169
+[; ;main.c: 169:                  STATE = BLOQUEIO_ANDAMENTO;
+[e = _STATE . `E2062 1 ]
+"170
+[; ;main.c: 170:                  count_timer=0;
+[e = _count_timer -> -> 0 `i `us ]
+"171
+[; ;main.c: 171:                  count_bloq_cycles = 1;
+[e = _count_bloq_cycles -> -> 1 `i `us ]
+"172
+[; ;main.c: 172:              }
+}
+[e :U 238 ]
+"173
+[; ;main.c: 173:          }else{
+}
+[e $U 239  ]
+[e :U 237 ]
+{
+"174
+[; ;main.c: 174:              STATE = DESBLOQUEADO;
+[e = _STATE . `E2062 0 ]
+"175
+[; ;main.c: 175:          }
+}
+[e :U 239 ]
+"177
+[; ;main.c: 177:           PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"178
+[; ;main.c: 178:           ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"179
+[; ;main.c: 179:      }
+}
+[e :U 236 ]
+"180
+[; ;main.c: 180: }
+[e :UE 229 ]
 }
