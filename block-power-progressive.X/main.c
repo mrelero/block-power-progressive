@@ -58,7 +58,7 @@
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
-
+#include <stdint.h>
 #include <xc.h>
 
 
@@ -68,40 +68,45 @@
 #define OUTPUT 0
 
 
-int flag = 0; 
+uint8_t flag = 0; 
+uint16_t convert_ad =0;
+
 
 void main(void) {
     //Ports Inicializer
     PORTA = 0x00; 
     PORTC = 0x00;
-    ADCON0 = 0b0000000;  // Configura canais Digitais
-    ADCON1 = 0b0001111; // Configura canais Digitais
-    // TRISA = 0x00;
     TRISC = 0x00;
-    
     TRISAbits.RA0 = INPUT;
+    
+    //Config AD
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    ADCON0 = 0b00000001;  // Configura canal AN0 - R0 para A/D
+    ADCON1 = 0b00001110; // Configura canal AN0 - R0 para A/D
+    ADCON2 = 0b10001101; // F = 8Mhz/2 = 4Hmz - Aquisition Time = 2*TAD
+    PIE1bits.ADIE = 1;
+    IPR1bits.ADIP = 1; 
     
     //Timers
     
     T0CON = 0b10010111;
     
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+
     INTCONbits.TMR0IE = 1;
-    INTCONbits.TMR0IF = 1;
-    PIE1bits.ADIE = 0;
+    INTCONbits.TMR0IF = 1;   
     PIE1bits.RCIE = 0;
-    TMR0H = 0xFF;
+    TMR0H = 0xFF; //Timer 10ms
     TMR0L = 0xB1;
     INTCON2bits.TMR0IP =1; 
     RCONbits.IPEN = 1; //Desabilita prioridades;
+    ADCON0bits.GO = 1;
     while(1){
        /* if (PORTAbits.RA0 == LOW){
             LATCbits.LATC7 = HIGH;
         }else{
             LATCbits.LATC7 = LOW;
         }*/
-        
     }
     
     return;
@@ -109,21 +114,24 @@ void main(void) {
 
 void __interrupt(high_priority) my_isr(void){
     
+    
      if (INTCONbits.TMR0IF == 1){  
-         if (flag == 0){
-             LATCbits.LATC7 =1;
-             flag = 1;
-         }else{
-             LATCbits.LATC7 =0;
-             flag = 0;
-         }
-         
-        
         TMR0H = 0xFF;
         TMR0L = 0xB1;
         INTCONbits.TMR0IF = 0; 
     }
-   
-    
-    
+     
+     if (PIR1bits.ADIF == 1){
+         convert_ad = (uint16_t) ADRESH<<8;
+         convert_ad = convert_ad + ADRESL;
+         
+         if(convert_ad > 0x0067){
+             LATCbits.LATC7 =1;
+         }else{
+             LATCbits.LATC7 =0;
+         }
+         
+          PIR1bits.ADIF = 0;
+          ADCON0bits.GO = 1;
+     }
 }

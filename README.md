@@ -41,6 +41,17 @@ T0CON = 0b10010111;
 - IPEN = 1 > Seta prioridade de interrupções.
 
 
+## Conversor AD
+
+A detecção de sinal aberto ou fechado em RA0 é realizada por meio de conversão A/D. Esta abordagem permite trabalhar com margens de segurança de tensão, e assim evitar bloqueios e desbloqueios indevidos. 
+
+O pino RA0 foi configurado conforme os parâmetros:
+- TAD = 20us;
+- Aquisition Time = 40us;
+- Vref = Vdd = 5V;
+
+Portanto, quando a tensão lida em R0 for maior que 0.5V, o processo de bloqueio é iniciado. 
+
 ## Maquina de Estados
 
 Em Andamento....

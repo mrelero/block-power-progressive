@@ -68,6 +68,113 @@
 
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdint.h" 2 3
+# 61 "main.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
@@ -82,17 +189,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\features.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 3
@@ -101,10 +198,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -3759,35 +3852,40 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
 # 62 "main.c" 2
 # 71 "main.c"
-int flag = 0;
+uint8_t flag = 0;
+uint16_t convert_ad =0;
+
 
 void main(void) {
 
     PORTA = 0x00;
     PORTC = 0x00;
-    ADCON0 = 0b0000000;
-    ADCON1 = 0b0001111;
-
     TRISC = 0x00;
-
     TRISAbits.RA0 = 1;
+
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    ADCON0 = 0b00000001;
+    ADCON1 = 0b00001110;
+    ADCON2 = 0b10001101;
+    PIE1bits.ADIE = 1;
+    IPR1bits.ADIP = 1;
 
 
 
     T0CON = 0b10010111;
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+
     INTCONbits.TMR0IE = 1;
     INTCONbits.TMR0IF = 1;
-    PIE1bits.ADIE = 0;
     PIE1bits.RCIE = 0;
     TMR0H = 0xFF;
     TMR0L = 0xB1;
     INTCON2bits.TMR0IP =1;
     RCONbits.IPEN = 1;
+    ADCON0bits.GO = 1;
     while(1){
-
 
 
 
@@ -3800,21 +3898,24 @@ void main(void) {
 
 void __attribute__((picinterrupt(("high_priority")))) my_isr(void){
 
+
      if (INTCONbits.TMR0IF == 1){
-         if (flag == 0){
-             LATCbits.LATC7 =1;
-             flag = 1;
-         }else{
-             LATCbits.LATC7 =0;
-             flag = 0;
-         }
-
-
         TMR0H = 0xFF;
         TMR0L = 0xB1;
         INTCONbits.TMR0IF = 0;
     }
 
+     if (PIR1bits.ADIF == 1){
+         convert_ad = (uint16_t) ADRESH<<8;
+         convert_ad = convert_ad + ADRESL;
 
+         if(convert_ad > 0x0067){
+             LATCbits.LATC7 =1;
+         }else{
+             LATCbits.LATC7 =0;
+         }
 
+          PIR1bits.ADIF = 0;
+          ADCON0bits.GO = 1;
+     }
 }

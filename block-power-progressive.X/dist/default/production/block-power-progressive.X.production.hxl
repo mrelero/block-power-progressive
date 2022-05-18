@@ -15,12 +15,12 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\block-power-progressive.X.production.hex)
-  8h - 97h		(dist/default/production\block-power-progressive.X.production.hex)
+  8h - B9h		(dist/default/production\block-power-progressive.X.production.hex)
   200000h - 200007h		(dist/default/production\block-power-progressive.X.production.hex)
   300000h - 30000Dh		(dist/default/production\block-power-progressive.X.production.hex)
  Unused ranges:
   4h - 7h
-  98h - 1FFFFFh
+  BAh - 1FFFFFh
   200008h - 2FFFFFh
 
 ### Hex Memory Map ###
@@ -39,7 +39,9 @@
 00000060 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000070 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000080 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000090 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00000090 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000000A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000000B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
 ----------------------------------------------------------
 00200000 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
