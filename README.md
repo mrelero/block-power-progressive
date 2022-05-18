@@ -12,7 +12,7 @@
 
  O Hardware é simples e é composto de um PIC18F2320, um transitor BC337, um relé de 12V e um diodo IN4007 de roda livre. 
 
- ![](figuras/esquema.png)
+ ![](figuras/esquema.PNG)
 
 
 ## Timers
